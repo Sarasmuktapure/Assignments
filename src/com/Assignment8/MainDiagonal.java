@@ -1,0 +1,60 @@
+package com.Assignment8;
+
+import java.util.Scanner;
+
+//sum of main diagonal 
+//main diagonal is a[0][0],a[1][1],and so on
+public class MainDiagonal 
+{
+	public static void sumMain(int a[][])
+	{
+		int sum=0;
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=0;j<a[i].length;j++)
+			{
+				if(i==j)
+				{
+					sum=sum+a[i][j];
+				}
+				
+			}
+		}
+		System.out.println("Sum of main diagonal elements are="+sum);
+	}
+
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the size of rows for array");
+		int rowsa=sc.nextInt();
+		System.out.println("Enter the size of column for array");
+		int colma=sc.nextInt();
+		int [][]a=new int[rowsa][colma];
+		
+		System.out.println("Enter the array elements");
+		
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=0;j<a[i].length;j++)
+			{
+				a[i][j]=sc.nextInt();
+				
+			}
+		}
+		System.out.println("---------------------------------------------------");
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=0;j<a[i].length;j++)
+			{
+				System.out.print(a[i][j]+" ");
+			}
+			System.out.println();
+		}
+		MainDiagonal.sumMain(a);
+		
+
+
+	}
+
+}
